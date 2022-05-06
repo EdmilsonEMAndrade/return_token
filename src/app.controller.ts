@@ -10,7 +10,6 @@ export class AppController {
   @Post("/token")
   getToken(@Req() req: Request, @Res() res: Response) {
     const token =  this.appService.getToken(req.body);
-    console.log(token)
     res.status(HttpStatus.OK).json({token})
   }
 
@@ -23,7 +22,6 @@ export class AppController {
             nomeFantasia: "Chat Gestor"
         }
     });
-    console.log(token)
     return res.status(HttpStatus.OK).json({token})
   }
 }
